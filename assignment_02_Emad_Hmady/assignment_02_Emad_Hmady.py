@@ -7,7 +7,7 @@ def displayMenu():
           "4. Exit\n" +
           "- - - - - - - - - - - - - - -")
 
-#function that takes a number from the user and return the code of digits of that number
+#function that takes a number from the user and return the count of digits of that number
 #if number is negative we multiply it by -1
 #this function takes a counter that is always zero
 #we use the integer division to remove one digit at a time and increase the counter by 1
