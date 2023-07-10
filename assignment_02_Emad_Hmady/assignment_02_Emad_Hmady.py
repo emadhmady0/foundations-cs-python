@@ -1,5 +1,5 @@
 
-
+#Display Menu
 def displayMenu():
     print("1. Count Digits\n" +
           "2. Find Max\n" +
@@ -7,7 +7,13 @@ def displayMenu():
           "4. Exit\n" +
           "- - - - - - - - - - - - - - -")
 
+#function that takes a number from the user and return the code of digits of that number
+#if number is negative we multiply it by -1
+#this function takes a counter that is always zero
+#we use the integer division to remove one digit at a time and increase the counter by 1
 def countDigits(num, counter):
+    if(num<0):
+        num = num*(-1)
     if ((num//10) == 0):
         counter += 1
         return counter
@@ -15,6 +21,10 @@ def countDigits(num, counter):
         counter += 1
         return countDigits(num//10, counter)
 
+#function that takes a list of numbers from the user and returns the max number between them
+#if the list is empty we return 0
+#we compare the first two numbers and remove the smaller one from them
+#the program stops when the list length is 1 and returns the number at index 0
 def findMax(lst):
     if (len(lst) == 0):
         return 0
@@ -27,6 +37,12 @@ def findMax(lst):
             lst.pop(0)
         return findMax(lst)
 
+#function that reads a text from a text file
+#Takes a tag from the user input
+#searches the file, if the user input is surronded by < and > signs then the counter increases by 1
+#we use string slicing to remove one letter from the string each time the function is called
+#the program stops when the string length is zero or less than or equal the length of the tag
+#this function returns a count of the occurences of the tag in the text file
 def countTags(strng, tag, counter, index):
     if (len(strng) == 0 or len(strng) <= len(tag)):
         return counter
@@ -66,4 +82,6 @@ def main():
             f = open("assignment_02_Emad_Hmady\html-text.txt","r") 
             html_text = f.read()
             print(countTags(html_text, tag_user_input, 0, 0))
+        case 4:
+            print("Thank you for using my program!, you exited.")
 main()
