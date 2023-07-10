@@ -27,6 +27,13 @@ def findMax(lst):
             lst.pop(0)
         return findMax(lst)
 
+def countTags(strng, tag, counter, index):
+    if (len(strng) == 0 or len(strng) <= len(tag)):
+        return counter
+    else:
+        if (strng[index] == "<" and strng[index+1:index+1+len(tag)] == tag and strng[index+1+len(tag)] == ">"):
+            counter += 1
+        return countTags(strng[index+1:], tag, counter, index)
 
 def main():
     displayMenu()
@@ -54,5 +61,9 @@ def main():
                     numbers_user_input = int(input("Enter a number: "))
                     user_list.append(numbers_user_input)
                 print(findMax(user_list))
-
+        case 3:
+            tag_user_input = input("Enter a tag to find it's count: ")
+            f = open("assignment_02_Emad_Hmady\html-text.txt","r") 
+            html_text = f.read()
+            print(countTags(html_text, tag_user_input, 0, 0))
 main()
