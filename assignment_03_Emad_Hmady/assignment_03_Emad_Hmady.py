@@ -12,6 +12,12 @@ def sumTuples(tpl1,tpl2):
     tpl3 = tuple(lst)
     return tpl3
 
+# Function that takes a dictionary and a file name
+# This function writes a dictionary to a json file 
+# This function transforms a dictionary into a valid json format
+# using string manipulation techniques we add the opening and closing curly brakets, 
+# we add a new line after each key:value pairs and we add a tab before each key:value pairs
+
 def exportJson(dict,filename):
     f = open(filename,"w")
     json_text = "{\n"
@@ -26,6 +32,13 @@ def transformListToDictionary(lst):
     for i in lst:
         dicty[i[0]] = i[1]
     return dicty
+
+# Function that reads from a file and gives the user a list of dictionaries
+# we first remove the curly braces using string string slicing
+# Then we split the data string into lst by every ",\n"
+# Then we replace every ","\t" , and empty spaces with nothing using the replace built-in method
+# Then we split every key:value pairs into lst1 by every ":"
+# Finally we do a for loop on list1 and assign every key:value pairs to list_of_dictionaries and return the list
 
 def importJson(filename):
     f = open(filename,"r")
@@ -77,3 +90,17 @@ def main():
                 close_program = True
             
 main()
+
+
+############
+# Exercise #
+############
+
+# a. 1/6N+8000N^3+24 = O(N^3) Cubic
+# b. 1/6N^3 = O(N^3) Cubic
+# c. 1/6N! +200N^4 = O(N!) Factorial
+# d. NlogN +1000 = O(NLogN) N*Logarithmic
+# e. logN +N = O(N) Linear
+# f. 1⁄2N(N-1) = O(N^2) Quadratic
+# g. N^2+220NlogN^2+3N+9000 = O(N^2) Quadratic
+# h. N!+3^N+2^N+N^3+N^2 = O(N!) Factorial
