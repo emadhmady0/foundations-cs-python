@@ -26,3 +26,21 @@ def transformListToDictionary(lst):
     for i in lst:
         dicty[i[0]] = i[1]
     return dicty
+
+def importJson(filename):
+    f = open(filename,"r")
+    file_data = f.read()
+    strng = file_data[3:len(file_data)-2]
+    lst = strng.split(",\n")
+    lst1=[]
+    lst_of_dictionaries = []
+    for i in lst:
+        str1 = i.replace("\t","")
+        str2 = str1.replace('"',"")
+        str3 = str2.replace(" ", "")
+        lst1.append(str3.split(":"))
+    for i in lst1:
+        dic = {}
+        dic[i[0]] = i[1]
+        lst_of_dictionaries.append(dic)
+    return lst_of_dictionaries
