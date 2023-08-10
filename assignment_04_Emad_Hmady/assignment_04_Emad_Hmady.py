@@ -1,3 +1,12 @@
+import json
+
+
+def tranformJsonToDic():
+    with open("assignment_04_Emad_Hmady\graph.json") as json_file:
+        data = json.load(json_file)
+    return data
+
+
 def printMenu():
     while True:
         print("1. Add a user to the platform.\n" +
@@ -89,3 +98,8 @@ def viewListOfFriends(dic):
 
 def printAllUsers(dic):
     print(list(dic))
+
+
+def transformDicToJson(dic):
+    with open("assignment_04_Emad_Hmady\graph.json", "w") as jsonfile:
+        json.dump(dic, jsonfile, indent=4)
