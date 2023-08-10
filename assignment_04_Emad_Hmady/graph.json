@@ -1,0 +1,26 @@
+{
+    "emad": [
+        "khaled",
+        "ali",
+        "ibrahim",
+        "souad",
+        "rana"
+    ],
+    "khaled": [
+        "emad"
+    ],
+    "ali": [
+        "emad"
+    ],
+    "ibrahim": [
+        "emad",
+        "souad"
+    ],
+    "souad": [
+        "emad",
+        "ibrahim"
+    ],
+    "rana": [
+        "emad"
+    ]
+}
