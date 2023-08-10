@@ -49,3 +49,21 @@ def removeUser(dic):
         else:
             print("User doesn't exist")
             user = input("Choose another username: ")
+
+
+def addConnection(dic):
+    user1 = input("Enter first username: ")
+    user2 = input("Enter second username: ")
+    if ((user1 in dic) and (user2 in dic)):
+        if (user1 in dic[user2] or user2 in dic[user1]):
+            print("These users are already connected")
+        else:
+            dic[user1].append(user2)
+            dic[user2].append(user1)
+            print(dic)
+    elif ((user1 not in dic) and (user2 not in dic)):
+        print(user1 + " and " + user2 + " doesn't exist")
+    elif ((user1 in dic) and (user2 not in dic)):
+        print(user2 + " doesn't exist")
+    else:
+        print(user1 + " doesn't exist")
