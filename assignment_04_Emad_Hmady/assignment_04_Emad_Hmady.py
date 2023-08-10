@@ -77,3 +77,15 @@ def removeConnection(dic):
             dic[user2].remove(user1)
         except Exception:
             print("Users aren't connected!")
+
+
+def viewListOfFriends(dic):
+    user = input("Enter username: ")
+    if (user in dic):
+        print(dic[user])
+    else:
+        print("User doesn't exist!")
+
+
+def printAllUsers(dic):
+    print(list(dic))
