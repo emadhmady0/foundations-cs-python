@@ -16,3 +16,24 @@ def printMenu():
             print("Enter an integer")
         except AssertionError:
             print("Make a choice between 1 and 7")
+
+
+def addUser(dic):
+    username = input("Choose your username: ")
+    if (len(dic) == 0):
+        dic[username] = []
+        print(dic)
+    else:
+        while True:
+            exists = False
+            for key in dic:
+                if (username == key):
+                    exists = True
+                    break
+            if (exists == True):
+                print("User already exists")
+                username = input("Choose another username: ")
+            else:
+                dic[username] = []
+                print(dic)
+                break
