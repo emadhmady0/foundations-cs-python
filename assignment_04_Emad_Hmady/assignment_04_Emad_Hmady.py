@@ -22,7 +22,6 @@ def addUser(dic):
     username = input("Choose your username: ")
     if (len(dic) == 0):
         dic[username] = []
-        print(dic)
     else:
         while True:
             exists = False
@@ -35,5 +34,18 @@ def addUser(dic):
                 username = input("Choose another username: ")
             else:
                 dic[username] = []
-                print(dic)
                 break
+
+
+def removeUser(dic):
+    user = input(
+        "Enter the username that you want to delete from the platform: ")
+    while True:
+        if (user in dic):
+            for i in dic[user]:
+                dic[i].remove(user)
+            dic.pop(user)
+            break
+        else:
+            print("User doesn't exist")
+            user = input("Choose another username: ")
