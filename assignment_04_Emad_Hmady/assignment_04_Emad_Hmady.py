@@ -103,3 +103,29 @@ def printAllUsers(dic):
 def transformDicToJson(dic):
     with open("assignment_04_Emad_Hmady\graph.json", "w") as jsonfile:
         json.dump(dic, jsonfile, indent=4)
+
+
+def main():
+    users_list = tranformJsonToDic()
+    close_program = False
+    while (close_program == False):
+        choice_from_menu_user_input = printMenu()
+        match choice_from_menu_user_input:
+            case 1:
+                addUser(users_list)
+            case 2:
+                removeUser(users_list)
+            case 3:
+                addConnection(users_list)
+            case 4:
+                removeConnection(users_list)
+            case 5:
+                viewListOfFriends(users_list)
+            case 6:
+                printAllUsers(users_list)
+            case 7:
+                transformDicToJson(users_list)
+                close_program = True
+
+
+main()
